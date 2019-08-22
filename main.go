@@ -59,6 +59,6 @@ func main() {
 
 	common.NoBanner = true
 
-	common.New(&common.App{"pbcopy", "1.0.0", "2018", "Pass text to/from clipboard", "mpetavy", common.APACHE, "https://github.com/mpetavy/pbcopy", false, nil,nil, nil, run, time.Duration(0)}, nil)
+	common.New(&common.App{"pbcopy", "1.0.0", "2018", "Pass text to/from clipboard", "mpetavy", common.APACHE, "https://github.com/mpetavy/pbcopy", false, nil, nil, run, time.Duration(0)}, nil)
 	common.Run()
 }
