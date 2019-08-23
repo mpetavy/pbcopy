@@ -5,16 +5,18 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
-	"io/ioutil"
-	"os"
-	"time"
-
 	"github.com/atotto/clipboard"
 	"github.com/mpetavy/common"
+	"io/ioutil"
+	"os"
 )
 
 var enc = flag.String("enc", common.DefaultConsoleEncoding(), "character encoding")
 var output = flag.Bool("o", false, "output from clipboard")
+
+func init() {
+	common.Init("pbcopy", "1.0.0", "2018", "Pass text to/from clipboard", "mpetavy", common.APACHE, "https://github.com/mpetavy/pbcopy", false, nil, nil, run, 0)
+}
 
 func run() error {
 	if *output {
@@ -59,6 +61,5 @@ func main() {
 
 	common.NoBanner = true
 
-	common.New(&common.App{"pbcopy", "1.0.0", "2018", "Pass text to/from clipboard", "mpetavy", common.APACHE, "https://github.com/mpetavy/pbcopy", false, nil, nil, run, time.Duration(0)}, nil)
-	common.Run()
+	common.Run(nil)
 }
