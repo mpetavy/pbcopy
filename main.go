@@ -59,7 +59,7 @@ func run() error {
 func main() {
 	defer common.Done()
 
-	common.NoBanner = true
+	*common.FlagNoBanner = true
 
 	common.Run(nil)
 }
