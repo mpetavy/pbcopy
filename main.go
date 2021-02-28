@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"github.com/atotto/clipboard"
 	"github.com/mpetavy/common"
-	"io/ioutil"
+	"io"
 	"os"
 )
 
@@ -35,7 +35,7 @@ func run() error {
 		return nil
 	} else {
 		reader := bufio.NewReader(os.Stdin)
-		b, err := ioutil.ReadAll(reader)
+		b, err := io.ReadAll(reader)
 		if err != nil {
 			return err
 		}
