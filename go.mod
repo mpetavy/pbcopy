@@ -4,7 +4,7 @@ go 1.16
 
 require (
 	github.com/atotto/clipboard v0.1.2
-	github.com/mpetavy/common v1.2.17
+	github.com/mpetavy/common v1.2.18
 )
 
 //replace github.com/mpetavy/common => ../common
