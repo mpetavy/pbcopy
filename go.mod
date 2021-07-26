@@ -3,8 +3,8 @@ module github.com/mpetavy/pbcopy
 go 1.16
 
 require (
-	github.com/atotto/clipboard v0.1.2
-	github.com/mpetavy/common v1.2.52
+	github.com/atotto/clipboard v0.1.4
+	github.com/mpetavy/common v1.3.0
 )
 
 //replace github.com/mpetavy/common => ../common
