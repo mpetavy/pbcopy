@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/atotto/clipboard v0.1.4
-	github.com/mpetavy/common v1.5.7
+	github.com/mpetavy/common v1.5.8
 )
 
 require (
@@ -17,6 +17,7 @@ require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/google/uuid v1.3.0 // indirect
 	github.com/googleapis/gax-go/v2 v2.0.5 // indirect
 	github.com/gookit/color v1.5.0 // indirect
 	github.com/gorilla/context v1.1.1 // indirect
