@@ -15,7 +15,7 @@ var enc = flag.String("enc", common.DefaultConsoleEncoding(), "character encodin
 var output = flag.Bool("o", false, "output from clipboard")
 
 func init() {
-	common.Init("1.0.0", "", "", "2018", "Pass text to/from clipboard", "mpetavy", fmt.Sprintf("https://github.com/mpetavy/%s", common.Title()), common.APACHE, nil, nil, nil, run, 0)
+	common.Init("pbcopy", "1.0.0", "", "", "2018", "Pass text to/from clipboard", "mpetavy", fmt.Sprintf("https://github.com/mpetavy/%s", common.Title()), common.APACHE, nil, nil, nil, run, 0)
 }
 
 func run() error {
