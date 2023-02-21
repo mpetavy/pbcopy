@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/atotto/clipboard v0.1.4
-	github.com/mpetavy/common v1.5.48
+	github.com/mpetavy/common v1.5.50
 )
 
 require (
