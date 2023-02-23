@@ -1,10 +1,10 @@
 module github.com/mpetavy/pbcopy
 
-go 1.20
+go 1.19
 
 require (
 	github.com/atotto/clipboard v0.1.4
-	github.com/mpetavy/common v1.5.51
+	github.com/mpetavy/common v1.5.52
 )
 
 require (
