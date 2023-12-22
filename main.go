@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"bytes"
+	"embed"
 	"flag"
 	"fmt"
 	"github.com/atotto/clipboard"
@@ -14,8 +15,11 @@ import (
 var enc = flag.String("enc", common.DefaultConsoleEncoding(), "character encoding")
 var output = flag.Bool("o", false, "output from clipboard")
 
+//go:embed go.mod
+var resources embed.FS
+
 func init() {
-	common.Init("pbcopy", "", "", "", "2018", "Pass text to/from clipboard", "mpetavy", fmt.Sprintf("https://github.com/mpetavy/%s", common.Title()), common.APACHE, nil, nil, nil, run, 0)
+	common.Init("", "", "", "", "Pass text to/from clipboard", "", "", "", &resources, nil, nil, run, 0)
 }
 
 func run() error {
