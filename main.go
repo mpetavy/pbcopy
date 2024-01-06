@@ -6,13 +6,15 @@ import (
 	"embed"
 	"flag"
 	"fmt"
-	"github.com/atotto/clipboard"
-	"github.com/mpetavy/common"
 	"io"
 	"os"
+
+	"github.com/atotto/clipboard"
+	"github.com/mpetavy/common"
 )
 
 var enc = flag.String("enc", common.DefaultConsoleEncoding(), "character encoding")
+var filename = flag.String("f", "", "read from file")
 var output = flag.Bool("o", false, "output from clipboard")
 
 //go:embed go.mod
@@ -23,7 +25,18 @@ func init() {
 }
 
 func run() error {
-	if *output {
+	switch {
+	case *filename != "":
+		ba, err := os.ReadFile(*filename)
+		if common.Error(err) {
+			return err
+		}
+
+		err = clipboard.WriteAll(string(ba))
+		if common.Error(err) {
+			return err
+		}
+	case *output:
 		t, err := clipboard.ReadAll()
 		if err != nil {
 			return err
@@ -35,9 +48,7 @@ func run() error {
 				return err
 			}
 		}
-
-		return nil
-	} else {
+	default:
 		reader := bufio.NewReader(os.Stdin)
 		b, err := io.ReadAll(reader)
 		if err != nil {
@@ -55,9 +66,9 @@ func run() error {
 		if err != nil {
 			return err
 		}
-
-		return nil
 	}
+
+	return nil
 }
 
 func main() {
