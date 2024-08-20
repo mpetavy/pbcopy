@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"bytes"
 	"embed"
 	"flag"
 	"fmt"
@@ -56,7 +55,7 @@ func run() error {
 		}
 
 		if *enc != "" {
-			b, err = common.ToUTF8(bytes.NewReader(b), *enc)
+			b, err = common.ToUTF8(b, *enc)
 			if err != nil {
 				return err
 			}
