@@ -6,7 +6,7 @@ toolchain go1.23.2
 
 require (
 	github.com/atotto/clipboard v0.1.4
-	github.com/mpetavy/common v1.9.86
+	github.com/mpetavy/common v1.9.87
 )
 
 require (
